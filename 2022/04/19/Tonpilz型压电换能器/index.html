@@ -1,0 +1,398 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>Tonpilz型压电换能器 - Lin&#039;s Blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="Lin&#039;s Blog"><meta name="msapplication-TileImage" content="/img/tp-link.svg"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="Lin&#039;s Blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="本文对Comsol案例库中的声学模块-压电器件-tonpilz_transducerTonpilz型压电换能器案例进行仿真。"><meta property="og:type" content="blog"><meta property="og:title" content="Tonpilz型压电换能器"><meta property="og:url" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/"><meta property="og:site_name" content="Lin&#039;s Blog"><meta property="og:description" content="本文对Comsol案例库中的声学模块-压电器件-tonpilz_transducerTonpilz型压电换能器案例进行仿真。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p1.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p2.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p3.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p4.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p5.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p6.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p7.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p8.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p9.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p10.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p11.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p12.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p13.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p14.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p15.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p16.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p17.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p18.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p19.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p20.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p21.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p22.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p23.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p24.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p25.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p26.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p27.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p28.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p29.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p30.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p31.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p32.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p33.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p34.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p35.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p36.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p37.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p38.jpg"><meta property="og:image" content="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p39.jpg"><meta property="article:published_time" content="2022-04-19T09:40:12.000Z"><meta property="article:modified_time" content="2022-04-19T09:40:12.744Z"><meta property="article:author" content="Lin"><meta property="article:tag" content="压电换能器"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p1.jpg"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/"},"headline":"Tonpilz型压电换能器","image":["https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p1.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p2.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p3.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p4.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p5.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p6.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p7.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p8.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p9.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p10.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p11.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p12.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p13.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p14.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p15.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p16.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p17.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p18.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p19.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p20.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p21.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p22.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p23.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p24.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p25.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p26.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p27.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p28.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p29.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p30.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p31.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p32.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p33.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p34.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p35.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p36.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p37.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p38.jpg","https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p39.jpg"],"datePublished":"2022-04-19T09:40:12.000Z","dateModified":"2022-04-19T09:40:12.744Z","author":{"@type":"Person","name":"Lin"},"publisher":{"@type":"Organization","name":"Lin's Blog","logo":{"@type":"ImageObject","url":"https://lin-ws.github.io/img/logo.svg"}},"description":"本文对Comsol案例库中的声学模块-压电器件-tonpilz_transducerTonpilz型压电换能器案例进行仿真。"}</script><link rel="canonical" href="https://lin-ws.github.io/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/"><link rel="icon" href="/img/tp-link.svg"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><!--!--><!--!--><!--!--><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/css/justifiedGallery.min.css"><!--!--><!--!--><!--!--><style>.pace{-webkit-pointer-events:none;pointer-events:none;-webkit-user-select:none;-moz-user-select:none;user-select:none}.pace-inactive{display:none}.pace .pace-progress{background:#3273dc;position:fixed;z-index:2000;top:0;right:100%;width:100%;height:2px}</style><script src="https://cdnjs.loli.net/ajax/libs/pace/1.2.4/pace.min.js"></script><!--!--><!--!--><!-- hexo injector head_end start --><script>
+  (function () {
+      function switchTab() {
+          if (!location.hash) {
+            return;
+          }
+          Array
+              .from(document.querySelectorAll('.tab-content'))
+              .forEach($tab => {
+                  $tab.classList.add('is-hidden');
+              });
+          Array
+              .from(document.querySelectorAll('.tabs li'))
+              .forEach($tab => {
+                  $tab.classList.remove('is-active');
+              });
+          const $activeTab = document.querySelector(location.hash);
+          if ($activeTab) {
+              $activeTab.classList.remove('is-hidden');
+          }
+          const $tabMenu = document.querySelector(`a[href="${location.hash}"]`);
+          if ($tabMenu) {
+              $tabMenu.parentElement.classList.add('is-active');
+          }
+      }
+      switchTab();
+      window.addEventListener('hashchange', switchTab, false);
+  })();
+  </script><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.0.0"></head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/"><img src="/img/logo.svg" alt="Lin&#039;s Blog" height="28"></a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/">主页</a><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/todo">TODO</a><a class="navbar-item" href="/Q-A">Q&amp;A</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/Lin-WS"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-10-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item copyright article-title type-1">转载</span><span class="level-item"><time dateTime="2022-04-19T09:40:12.000Z" title="2022/4/19 17:40:12">2022-04-19</time>发表</span><span class="level-item"><time dateTime="2022-04-19T09:40:12.744Z" title="2022/4/19 17:40:12">2022-04-19</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/Comsol/">Comsol</a></span><span class="level-item">31 分钟读完 (大约4623个字)</span></div></div><div class="copyright article-block type-1"><p>原文链接：<a href="https://cn.comsol.com/model/download/793681/models.aco.tonpilz_transducer.zh_CN.pdf" target="_blank">https://cn.comsol.com/model/download/793681/models.aco.tonpilz_transducer.zh_CN.pdf</a></p></div><h1 class="title is-3 is-size-4-mobile">Tonpilz型压电换能器</h1><div class="content"><p>本文对Comsol案例库中的<code>声学模块-压电器件-tonpilz_transducer</code>Tonpilz型压电换能器案例进行仿真。</p>
+<span id="more"></span>
+
+<h2 id="模型向导"><a href="#模型向导" class="headerlink" title="模型向导"></a>模型向导</h2><p>模型维度选择<code>三维</code>，物理场选择<code>声学-声_结构相互作用-声_压电相互作用，频域</code>，研究选择<code>频域</code>，如图1。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p1.jpg" alt="图1 模型向导" style="zoom:50%;">
+</div>
+
+<h2 id="全局参数"><a href="#全局参数" class="headerlink" title="全局参数"></a>全局参数</h2><p>本例使用的参数较多，可直接在Comsol依次输入参数，也可新建文本文件输入，在从软件中导入。直接输入参数需要单击<code>全局定义-参数1</code>，在参数栏中输入下表所示的数据即可。</p>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">表达式</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Rwater</td>
+<td align="center">40[mm]</td>
+<td align="center">水域半径</td>
+</tr>
+<tr>
+<td align="center">Rpml</td>
+<td align="center">10[mm]</td>
+<td align="center">完美匹配层厚度</td>
+</tr>
+<tr>
+<td align="center">a</td>
+<td align="center">25[mm]</td>
+<td align="center">活塞头半径</td>
+</tr>
+<tr>
+<td align="center">Zeval</td>
+<td align="center">-10[mm]</td>
+<td align="center">方向性计算距离</td>
+</tr>
+<tr>
+<td align="center">Vrms</td>
+<td align="center">1[V]</td>
+<td align="center">额定驱动电压</td>
+</tr>
+<tr>
+<td align="center">V0</td>
+<td align="center">sqrt(2)*Vrms</td>
+<td align="center">零到峰值驱动电压</td>
+</tr>
+<tr>
+<td align="center">f0min</td>
+<td align="center">1[kHz]</td>
+<td align="center">最小工作频率</td>
+</tr>
+<tr>
+<td align="center">f0max</td>
+<td align="center">40[kHz]</td>
+<td align="center">最大工作频率</td>
+</tr>
+<tr>
+<td align="center">f0step</td>
+<td align="center">1[kHz]</td>
+<td align="center">频率步进</td>
+</tr>
+</tbody></table>
+<p>新建文本文件，将其命名为<code>tonpilz_transducer_parameters.txt</code>，参数格式为<code>变量名 表达式 描述</code>，每个参数占一行，在文件中输入图2所示内容，然后在Comsol的参数栏中点击<code>从文件加载</code>即可。上述两种方法的结果如图3所示。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p2.jpg" alt="图2 参数文件内容" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p3.jpg" alt="图3 全局参数设置" style="zoom:50%;">
+</div>
+
+<h2 id="几何构建"><a href="#几何构建" class="headerlink" title="几何构建"></a>几何构建</h2><p>将几何设置窗口的单位设置为mm，右键<code>几何1-工作平面</code>，在平面定义中选择<code>xz平面</code>，单击<code>构建选定对象</code>左侧的<code>显示工作平面</code>图标。右键<code>平面几何</code>，选择矩形，大小为宽4mm，高2mm，位置为xw=0，yw=25mm；右键<code>平面几何</code>，选择矩形，大小为宽2mm，高20mm，位置为xw=0，yw=5mm；右键<code>平面几何</code>，选择矩形，大小为宽6mm，高10mm，位置为xw=2，yw=15mm；右键<code>平面几何</code>，选择矩形，大小为宽2mm，高8mm，位置为xw=4，yw=7mm，在层一栏中添加三个层，厚度都为2mm，上述矩形画完后单击<code>构建所有对象</code>，结果如图4。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p4.jpg" alt="图4 矩形几何" style="zoom:50%;">
+</div>
+
+<p>矩形完成后开始构建多边形部分，右键<code>平面几何</code>，选择多边形，在坐标栏输入下表数据，这个数据表示点的坐标，软件将这些点依次连接从而构成多边形，表中的<code>a</code>是全局参数中的活塞头半径。</p>
+<table>
+<thead>
+<tr>
+<th align="center">xw(mm)</th>
+<th align="center">yw(mm)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">0</td>
+<td align="center">0</td>
+</tr>
+<tr>
+<td align="center">0</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">5</td>
+</tr>
+<tr>
+<td align="center">2</td>
+<td align="center">7</td>
+</tr>
+<tr>
+<td align="center">20</td>
+<td align="center">7</td>
+</tr>
+<tr>
+<td align="center">a</td>
+<td align="center">0</td>
+</tr>
+</tbody></table>
+<p>多边形部分是换能器的活塞辐射面，接下来画水域和完美匹配层。右键<code>平面几何</code>，选择圆，半径设为<code>Rwater+Rpml</code>，即全局参数中的水域半径和完美匹配层半径，扇形角改为90，旋转角改为-90，在层中添加一个厚度为<code>Rpml</code>的层，然后单击<code>全部构建</code>，这样就把Tonpilz换能器的截面图绘制完成了，如图5所示。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p5.jpg" alt="图5 Tonpilz截面图" style="zoom:50%;">
+</div>
+
+<p>下面需将截面图变为三维图，只需对截面进行旋转即可。右键<code>几何1</code>，选择回转，在旋转角度栏中选中角度，终止角度设为90，然后单击<code>构建所有对象</code>，结果如图6。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p6.jpg" alt="图6 回转90度" style="zoom:50%;">
+</div>
+
+<p>上述步骤将换能器模型的1/4构建出来，对这1/4模型进行旋转变换即可完成模型构建。右键<code>几何1</code>，选择<code>变换-旋转</code>，输入对象选择整个实体，勾选<code>保留输入对象</code>，在旋转栏的角中输入<code>range(90，90，270)</code>，此句的意思是起始角度90，终止角度270，步进90，即从90度开始，每旋转90度就画一个实体，直到旋转了270度，最后单击构建所有对象即可，结果如图7。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p7.jpg" alt="图7 Tonpilz换能器模型" style="zoom:50%;">
+</div>
+
+<p>若是利用SolidWorks建模会更快一些，但从SolidWorks导入Comsol时会有问题，后续在讨论SolidWorks建模方法。</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>由于模型比较复杂，边界、域较多，因此可以使用显式定义预先给各种边界和域分组，使后续操作简单不易出错。注：下面的域编号都是按上一节的建模顺序由软件自动命名的，若构建几何时的顺序改变或是从CAD软件中导入，要注意编号的不同。</p>
+<h3 id="域"><a href="#域" class="headerlink" title="域"></a>域</h3><p>右键<code>定义-选择-显式</code>，标签改为<code>水域-内部</code>，域选择3、4、22、32，如图8；右键<code>定义-选择-显式</code>，标签改为<code>水域-PML</code>，域选择1、2、21、31，如图9；右键<code>定义-选择-显式</code>，标签改为<code>铝</code>，域选择5、6、23、33，如图10；右键<code>定义-选择-显式</code>，标签改为<code>钢</code>，域选择7、8、17-20、24、29、30、34-36，如图11；右键<code>定义-选择-显式</code>，标签改为<code>+Z极化压电</code>，域选择9、10、13、14、25、27、37、39，如图12；右键<code>定义-选择-显式</code>，标签改为<code>-Z极化压电</code>，域选择11、12、15、16、26、28、38、40，如图13。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p8.jpg" alt="图8 水域-内部" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p9.jpg" alt="图9 水域-PML" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p10.jpg" alt="图10 铝" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p11.jpg" alt="图11 钢" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p12.jpg" alt="图12 +Z极化压电" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p13.jpg" alt="图13 -Z极化压电" style="zoom:50%;">
+</div>
+
+<p>上述将模型的各个域进行分组，下面需要将已分组的域再次分组。右键<code>定义-选择-并集</code>，标签改为<code>水域</code>，在输入实体栏中单击<code>+</code>添加<code>水域-内部</code>和<code>水域-PML</code>，结果如图14；右键<code>定义-选择-并集</code>，标签改为<code>压电域</code>，在输入实体栏中单击<code>+</code>添加<code>+Z极化压电</code>和<code>-Z极化压电</code>，结果如图15；右键<code>定义-选择-补集</code>，标签改为<code>固体域</code>，在输入实体栏中单击<code>+</code>添加<code>水域</code>，补集的作用是将选中的域去除，结果如图16；右键<code>定义-选择-补集</code>，标签改为<code>非PML域</code>，在输入实体栏中单击<code>+</code>添加<code>水域-PML</code>，结果如图17。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p14.jpg" alt="图14 水域" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p15.jpg" alt="图15 压电域" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p16.jpg" alt="图16 固体域" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p17.jpg" alt="图17 非PML域" style="zoom:50%;">
+</div>
+
+<h3 id="边界"><a href="#边界" class="headerlink" title="边界"></a>边界</h3><p>除了上述域的处理，还将要用到边界选择，因此接下来对边界进行分组管理。右键<code>定义-选择-显式</code>，标签改为<code>接地边界</code>，将几何实体层改为<code>边界</code>，选择边界28、29、38、39、45、46、93、99、103、145、151、155，这些边界都是由压电圆环的极化方向来决定接地的，相邻的压电圆环极化方向相反，使压电效应叠加，以获得更大的响应，结果如图18；右键<code>定义-选择-显式</code>，标签改为<code>电压边界</code>，将几何实体层改为<code>边界</code>，选择边界33、34、43、44、96、102、148、154，结果如图19；右键<code>定义-选择-显式</code>，标签改为<code>固定边界</code>，将几何实体层改为<code>边界</code>，选择边界19、20、88、164，结果如图20；右键<code>定义-选择-显式</code>，标签改为<code>外场边界</code>，将几何实体层改为<code>边界</code>，选择边界9、10、82、125，结果如图21。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p18.jpg" alt="图18 接地边界" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p19.jpg" alt="图19 电压边界" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p20.jpg" alt="图20 固定边界" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p21.jpg" alt="图21 外场边界" style="zoom:50%;">
+</div>
+
+<h3 id="积分算子"><a href="#积分算子" class="headerlink" title="积分算子"></a>积分算子</h3><p>右键<code>定义-非局部耦合-积分</code>，将几何实体层改为<code>边界</code>，选择<code>外场边界</code>，结果如图22；右键<code>定义-非局部耦合-积分</code>，将几何实体层改为<code>边界</code>，选择边界14、15、85、128，即与水接触的面，结果如图23；右键<code>定义-非局部耦合-积分</code>，将几何实体层改为<code>点</code>，选择点46，即水域的顶点，结果如图24；</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p22.jpg" alt="图22 外场边界积分算子" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p23.jpg" alt="图23 声-结构积分算子" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p24.jpg" alt="图24 水域顶点" style="zoom:50%;">
+</div>
+
+<h2 id="基矢坐标系"><a href="#基矢坐标系" class="headerlink" title="基矢坐标系"></a>基矢坐标系</h2><p>右键<code>定义-坐标系-基矢坐标系</code>，将标签改为<code>+Z极化坐标系</code>，勾选<code>设为正交</code>即可，+Z方向极化与全局坐标系一致，因此不需要修改x1-x3的值，也可以不设置这个基矢坐标系，直接使用全局坐标系；右键<code>定义-坐标系-基矢坐标系</code>，将标签改为<code>-Z极化坐标系</code>，将x2的基矢y改为-1，x3的基矢z改为-1，勾选<code>设为正交</code>即可，也可以使用旋转坐标系来定义-Z极化方向，只需把旋转栏的 $$\beta$$ 角输入<code>pi</code>。</p>
+<h2 id="完美匹配层"><a href="#完美匹配层" class="headerlink" title="完美匹配层"></a>完美匹配层</h2><p>在求解场相关的问题时，有时需要求解一个带开放边界的域，比如电磁波以无反射方式通过计算域的边界，而完美匹配层（PML）可以充当一个近乎理想的吸收体或辐射体域，由于无法求解无限大区域的场，因此需要使用各种策略将模型截断为合理的大小，PML就属于这种截断策略。需要注意的是，PML在划分网格时有一定的约束，详情请点<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/420744491/answer/1478385948">这里</a>。本例中的完美匹配层设置如下。</p>
+<p>右键<code>定义-完美匹配层</code>，域选择<code>水域-PML</code>，类型改为<code>球面</code>，坐标拉伸类型改为<code>有理数</code>，PML比例因子输入0.5，PML比例曲率参数输入5，如图25所示。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p25.jpg" alt="图25 完美匹配层" style="zoom:50%;">
+</div>
+
+<h2 id="材料"><a href="#材料" class="headerlink" title="材料"></a>材料</h2><p>为各个域添加材料。右键<code>材料-从库中添加材料</code>，点击内置材料，找到<code>Water，liquid</code>添加，在弹出的设置栏中找到<code>选择</code>，改为水域。同理，将铝(Aluminum)、钢(Steel AISI 4340)和压电陶瓷(Lead Zirconate Titanate(PZT-4))分别添加到铝域、钢域和压电域，设置完成后结果如图26。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p26.jpg" alt="图26 材料设置" style="zoom:60%;">
+</div>
+
+<p>此时可以在模型开发器一栏中看到材料，且图标的左下角有一个红叉，这是因为没有为各个域指定物理场，导致每个材料都多出来了一些本不存在的属性，并且需要用户填写完整，但当为每个域指定正确的物理场后这些属性会消失，因此可以暂时不管它们，也可以在指定完物理场后观察材料属性来验证各个域的物理场是否设置正确。</p>
+<h2 id="物理场设置"><a href="#物理场设置" class="headerlink" title="物理场设置"></a>物理场设置</h2><p>由于在模型向导中选择的是<code>声-压电相互作用，频域</code>这个耦合物理场，因此在物理场节点下会有三个物理场，分别是<code>压力声学，频域(ACPR)</code>、<code>固体力学(SOLID)</code>和<code>静电ES</code>，下面需要对三个物理场都设置域和边界条件。</p>
+<h3 id="压力声学，频域-ACPR"><a href="#压力声学，频域-ACPR" class="headerlink" title="压力声学，频域(ACPR)"></a>压力声学，频域(ACPR)</h3><p>单击此物理场，将域选择栏改为<code>水域</code>，声压级参考压力改为<code>使用水的参考压力</code>，完美匹配层的典型波速栏中输入<code>1500[m/s]</code>，结果如图27。右键<code>压力声学，频域(ACPR)-外场计算</code>，将选择蓝改为<code>外场边界</code>，外场计算栏中的<code>z=z0平面上的条件</code>改为<code>对称/无限硬声场边界</code>，结果如图28。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p27.jpg" alt="图27 压力声学，频域(ACPR)" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p28.jpg" alt="图28 外场计算" style="zoom:50%;">
+</div>
+
+<h3 id="固体力学-SOLID"><a href="#固体力学-SOLID" class="headerlink" title="固体力学(SOLID)"></a>固体力学(SOLID)</h3><p>单击此物理场，将选择栏改为<code>固体域</code>。单击<code>压电材料1</code>，将选择改为<code>+Z极化压电</code>，坐标系改为<code>+Z极化坐标系(sys2)</code>。右键<code>固体力学(solid)-材料模型-压电材料</code>，将选择改为<code>-Z极化压电</code>，坐标系改为<code>-Z极化坐标系(sys3)</code>，结果如图29。右键<code>固体力学(solid)-固定约束</code>，将选择改为<code>固定边界</code>。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p29.jpg" alt="图29 压电材料" style="zoom:50%;">
+</div>
+
+<p>设置完这一步后可以看到原先在材料图标上的红叉消失的，点击材料也能看到多余的属性消失了，这说明物理场设置没问题。</p>
+<h3 id="静电-ES"><a href="#静电-ES" class="headerlink" title="静电(ES)"></a>静电(ES)</h3><p>单击静电(ES)，将选择改为<code>压电域</code>。右键<code>静电(ES)-接地</code>，将选择改为<code>接地边界</code>。右键<code>静电(ES)-电势</code>，将选择改为<code>电压边界</code>，电势改为<code>V0</code>，结果如图30。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p30.jpg" alt="图30 静电物理场" style="zoom:50%;">
+</div>
+
+<h2 id="网格"><a href="#网格" class="headerlink" title="网格"></a>网格</h2><p>由于完美匹配层的特殊性，需要单独划分网格，因此在固体域和内部水域创建四面体网格，在PML域创建扫掠网格。</p>
+<p>右键<code>网格1-自由四面体网格</code>，将几何实体层改为<code>域</code>，将选择改为<code>非PML域</code>，结果如图31。右键<code>自由四面体网格1-大小</code>，将选择改为<code>水域</code>，选中<code>定制</code>单选框，勾选<code>最大单元大小</code>复选框，输入<code>1500[m/s]/f0max/6</code>，即水域的最大网格单元的大小为信号最小波长的1/6，也即一个波长至少由6个网格单元解析，结果如图32。右键<code>自由四面体网格1-大小</code>，将选择改为<code>固体域</code>，选中<code>定制</code>单选框，勾选<code>狭窄区域分辨率</code>复选框，输入<code>2</code>，这保证保压电盘和螺栓的狭窄层中至少包含两个网格单元，结果如图33。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p31.jpg" alt="图31 非PML域网格" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p32.jpg" alt="图32 水域网格" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p33.jpg" alt="图33 固体域网格" style="zoom:50%;">
+</div>
+
+<p>右键<code>网格1-扫掠</code>，将几何实体层改为<code>域</code>，将选择改为<code>水域-PML</code>(这两步可以不管，即几何实体层选中默认的<code>剩余</code>，最终划分的网格一样)，右键<code>扫掠1-分布</code>，将选择改为<code>水域-PML</code>(也可以用默认的<code>所有域</code>或<code>手动</code>)，结果如图34。右键<code>网格1-边界层</code>，几何实体层选择<code>域</code>，将选择改为<code>水域-内部</code>，取消勾选过渡栏中的<code>平滑过渡到内部网格</code>，结果如图35。单击<code>边界层属性</code>，将选择改为<code>外场边界</code>，边界层数输入<code>1</code>，第一层厚度改为<code>手动</code>，厚度输入<code>1500[m/s]/f0max/6/20</code>，结果如图36所示，创建边界层将确保在外场计算特征中使用的是数值上明确定义<br>的法向梯度。单击网格1，在设置栏中单击全部构建，网格就划分好了，结果如图37。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p34.jpg" alt="图34 水域-PML网格" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p35.jpg" alt="图35 边界层" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p36.jpg" alt="图36 边界层属性" style="zoom:50%;">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p37.jpg" alt="图37 构建网格" style="zoom:50%;">
+</div>
+
+<p>至此，模型工作全部完成，可以开始研究以及后处理，但为了后处理的方便，需要在定义中设置一些变量。</p>
+<h2 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h2><p>右键<code>全局定义-变量</code>，与全局参数的设置类似，可以直接在设置中输入下表数据，也可以点击从文件加载(文件格式与参数的格式一致)，最后结果如图38所示。</p>
+<table>
+<thead>
+<tr>
+<th align="center">名称</th>
+<th align="center">表达式</th>
+<th align="center">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">rho0</td>
+<td align="center">intop3(acpr.rho)</td>
+<td align="center">室温下水的密度</td>
+</tr>
+<tr>
+<td align="center">c0</td>
+<td align="center">intop3(acpr.c)</td>
+<td align="center">室温下水中的声速</td>
+</tr>
+<tr>
+<td align="center">Zaco</td>
+<td align="center">intop2(p)/intop2(acpr.iomega*(w+eps))/(rho0*c0)</td>
+<td align="center">比声阻抗</td>
+</tr>
+<tr>
+<td align="center">pext_1</td>
+<td align="center">pext(0,0,-1)</td>
+<td align="center">1 m 处的外场压力</td>
+</tr>
+<tr>
+<td align="center">prms</td>
+<td align="center">sqrt(0.5*pext_1*conj(pext_1))[Pa]</td>
+<td align="center">1 m 处的均方根压力</td>
+</tr>
+<tr>
+<td align="center">TVR</td>
+<td align="center">20*log10(prms/Vrms/1[uPa/V])</td>
+<td align="center">发射电压响应 (TVR)</td>
+</tr>
+<tr>
+<td align="center">pext_Zeval</td>
+<td align="center">pext(0,0,Zeval[1/m])</td>
+<td align="center">Zeval 处的外场压力</td>
+</tr>
+<tr>
+<td align="center">Ifront</td>
+<td align="center">0.5*pext_Zeval*conj(pext_Zeval)[Pa^2]/(rho0*c0)</td>
+<td align="center">Zeval 处的轴上强度</td>
+</tr>
+<tr>
+<td align="center">Ptot</td>
+<td align="center">intop1(down(acpr.Ix)*acpr.nx<br>+down(acpr.Iy)*acpr.ny+down(acpr.Iz)*acpr.nz)</td>
+<td align="center">总辐射功率</td>
+</tr>
+<tr>
+<td align="center">Iave</td>
+<td align="center">Ptot/(4*pi*Zeval^2)</td>
+<td align="center">Zeval 处的单极源平均强度</td>
+</tr>
+<tr>
+<td align="center">Di</td>
+<td align="center">Ifront/Iave</td>
+<td align="center">强度方向性</td>
+</tr>
+<tr>
+<td align="center">DI</td>
+<td align="center">10*log10(Di)</td>
+<td align="center">Tonpilz 型换能器的指向性指数</td>
+</tr>
+<tr>
+<td align="center">k0</td>
+<td align="center">2*pi*freq/c0</td>
+<td align="center">波数</td>
+</tr>
+<tr>
+<td align="center">DI_fl_pist</td>
+<td align="center">10*log10((k0*a)^2/(1-2*besselj(1,2*k0*a)/(2*k0*a)))</td>
+<td align="center">凸缘活塞的指向性指数</td>
+</tr>
+<tr>
+<td align="center">SPL_Zeval</td>
+<td align="center">intop3(subst(acpr.efc1.Lp_pext,x,0,y,0,z,Zeval))</td>
+<td align="center">Zeval 处的声压级</td>
+</tr>
+<tr>
+<td align="center">SPL_rel</td>
+<td align="center">acpr.efc1.Lp_pext-SPL_Zeval</td>
+<td align="center">Zeval 处相对于 0 dB 的声压级</td>
+</tr>
+</tbody></table>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p38.jpg" alt="图38 后处理变量" style="zoom:50%;">
+</div>
+
+<p>上述表达式中的intop1、intop2和intop3是在定义一章中设置的三个积分算子，而其他的是软件内置的一些变量和函数。</p>
+<h3 id="比声阻抗"><a href="#比声阻抗" class="headerlink" title="比声阻抗"></a>比声阻抗</h3><p>比声阻抗 $$Z_{aco}$$ 计算为与水接触的前质量块表面阻抗与水的特性阻抗 $$Z_0$$之比，如式（1）。$$Z_0$$ 计算为温度293.15K时水的密度与水中声速的乘积。<br>$$<br>Z_{aco} = \frac{\left(\int_{A}pda\right)/\left(\int_{A}\nu_nda\right)}{Z_0}\tag 1<br>$$<br>前质量块的表面阻抗计算为声压 p 的面积分与表面结构速度法向分量 $$\nu_n$$ 的面积分之比。在本例中，法向速度与速度的 Z 分量 $$\nu_z$$ 相同，该 Z 分量在频域中可以表示为结构位移 w 的 Z 分量、变量 j （-1 的平方根）和振动角频率 $$\omega$$ 的乘积。通过引入指派到相关表面的非局部积分耦合来计算面积分。为避免除以零，上表中求比声阻抗时将表示机器精度极限的内置常数 eps 添加到变量 w。</p>
+<h3 id="发射电压响应-TVR"><a href="#发射电压响应-TVR" class="headerlink" title="发射电压响应(TVR)"></a>发射电压响应(TVR)</h3><p>TVR 表示在距离 1m 处测得的、由 1V 额定电压驱动的换能器灵敏度。在数学上，该定义可以式（2）表示。<br>$$<br>TVR = 20log_{10}\frac{p_{RMS}/V_{RMS}}{1\mu Pa/V}\tag2<br>$$<br>距换能器前质量块表面 1m 处的均方根压力 $$p_{RMS}$$ 可以根据式（3）计算。<br>$$<br>p_{RMS} = \sqrt{\frac{1}{2}pp^*}\tag3<br>$$<br>在式（3）中，换能器前方 1m 处的压力 $$p$$ 是使用外场压力变量 pext 通过表达式 pext(0,0,-1) 获得的。请注意，计算域远小于 1m，但通过执行外场计算，能够计算该域外任意点处的压力和相位。变量 $$p^*$$ 是压力 $$p$$ 的共轭复数，在 COMSOL 中，可以使用表达式 conj(pext(0,0,-1)) 来表示。</p>
+<h3 id="指向性指数-DI"><a href="#指向性指数-DI" class="headerlink" title="指向性指数(DI)"></a>指向性指数(DI)</h3><p>指向性指数 (DI) 给出了发射声波束的方向性度量，即外场（大于瑞利半径）中换能器前方一定距离处的强度 $$I_{front}$$ 与由相同强度的全向声源传输的强度 $$I_{ave}$$ 之比的度量。在换能器前方 10m 处计算指向性指数。可以通过更改参数 Zeval 的值，计算其它位置处的指向性指数。指向性指数可以根据式（4） 计算。<br>$$<br>DI = 10log_{10}\frac{I_{front}}{I_{ave}}\tag4<br>$$<br>物理量 $$I_{front}$$ 可以计算为换能器一定距离处的均方根压力与特性阻抗 $$Z_0$$ 之比。物理量 $$I_{ave}$$ 可以计算为总辐射功率 $$P_{tot}$$ 与半径为计算指向性指数时采用的换能器前方特定距离的球体表面积之比。</p>
+<h2 id="研究"><a href="#研究" class="headerlink" title="研究"></a>研究</h2><p>单击<code>研究1-步骤1：频域</code>，将频率单位设置为<code>kHz</code>，频率设置为<code>range(f0min,f0step,f0max)</code>，点击计算即可，结果如图39。</p>
+<div align="center">
+    <img src="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/p39.jpg" alt="图39 研究" style="zoom:50%;">
+</div>
+
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2></div><div class="article-licensing box"><div class="licensing-title"><p>Tonpilz型压电换能器</p><p><a href="https://lin-ws.github.io/2022/04/19/Tonpilz型压电换能器/">https://lin-ws.github.io/2022/04/19/Tonpilz型压电换能器/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>Lin</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-04-19</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2022-04-19</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/">压电换能器</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/2022/03/30/%E5%8E%8B%E7%94%B5%E9%A9%B1%E5%8A%A8%E5%89%AA%E5%88%87%E6%A2%81%E4%BB%BF%E7%9C%9F/"><span class="level-item">压电驱动剪切梁仿真</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><!--!--></div><!--!--><div class="column column-right is-4-tablet is-4-desktop is-3-widescreen  order-3 is-sticky"><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#模型向导"><span class="level-left"><span class="level-item">1</span><span class="level-item">模型向导</span></span></a></li><li><a class="level is-mobile" href="#全局参数"><span class="level-left"><span class="level-item">2</span><span class="level-item">全局参数</span></span></a></li><li><a class="level is-mobile" href="#几何构建"><span class="level-left"><span class="level-item">3</span><span class="level-item">几何构建</span></span></a></li><li><a class="level is-mobile" href="#定义"><span class="level-left"><span class="level-item">4</span><span class="level-item">定义</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#域"><span class="level-left"><span class="level-item">4.1</span><span class="level-item">域</span></span></a></li><li><a class="level is-mobile" href="#边界"><span class="level-left"><span class="level-item">4.2</span><span class="level-item">边界</span></span></a></li><li><a class="level is-mobile" href="#积分算子"><span class="level-left"><span class="level-item">4.3</span><span class="level-item">积分算子</span></span></a></li></ul></li><li><a class="level is-mobile" href="#基矢坐标系"><span class="level-left"><span class="level-item">5</span><span class="level-item">基矢坐标系</span></span></a></li><li><a class="level is-mobile" href="#完美匹配层"><span class="level-left"><span class="level-item">6</span><span class="level-item">完美匹配层</span></span></a></li><li><a class="level is-mobile" href="#材料"><span class="level-left"><span class="level-item">7</span><span class="level-item">材料</span></span></a></li><li><a class="level is-mobile" href="#物理场设置"><span class="level-left"><span class="level-item">8</span><span class="level-item">物理场设置</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#压力声学，频域-ACPR"><span class="level-left"><span class="level-item">8.1</span><span class="level-item">压力声学，频域(ACPR)</span></span></a></li><li><a class="level is-mobile" href="#固体力学-SOLID"><span class="level-left"><span class="level-item">8.2</span><span class="level-item">固体力学(SOLID)</span></span></a></li><li><a class="level is-mobile" href="#静电-ES"><span class="level-left"><span class="level-item">8.3</span><span class="level-item">静电(ES)</span></span></a></li></ul></li><li><a class="level is-mobile" href="#网格"><span class="level-left"><span class="level-item">9</span><span class="level-item">网格</span></span></a></li><li><a class="level is-mobile" href="#全局变量"><span class="level-left"><span class="level-item">10</span><span class="level-item">全局变量</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#比声阻抗"><span class="level-left"><span class="level-item">10.1</span><span class="level-item">比声阻抗</span></span></a></li><li><a class="level is-mobile" href="#发射电压响应-TVR"><span class="level-left"><span class="level-item">10.2</span><span class="level-item">发射电压响应(TVR)</span></span></a></li><li><a class="level is-mobile" href="#指向性指数-DI"><span class="level-left"><span class="level-item">10.3</span><span class="level-item">指向性指数(DI)</span></span></a></li></ul></li><li><a class="level is-mobile" href="#研究"><span class="level-left"><span class="level-item">11</span><span class="level-item">研究</span></span></a></li><li><a class="level is-mobile" href="#结果"><span class="level-left"><span class="level-item">12</span><span class="level-item">结果</span></span></a></li></ul></div></div><style>#toc .menu-list > li > a.is-active + .menu-list { display: block; }#toc .menu-list > li > a + .menu-list { display: none; }</style><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-04-19T09:40:12.000Z">2022-04-19</time></p><p class="title"><a href="/2022/04/19/Tonpilz%E5%9E%8B%E5%8E%8B%E7%94%B5%E6%8D%A2%E8%83%BD%E5%99%A8/">Tonpilz型压电换能器</a></p><p class="categories"><a href="/categories/Comsol/">Comsol</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-30T02:56:14.000Z">2022-03-30</time></p><p class="title"><a href="/2022/03/30/%E5%8E%8B%E7%94%B5%E9%A9%B1%E5%8A%A8%E5%89%AA%E5%88%87%E6%A2%81%E4%BB%BF%E7%9C%9F/">压电驱动剪切梁仿真</a></p><p class="categories"><a href="/categories/Comsol/">Comsol</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-26T03:49:34.000Z">2022-03-26</time></p><p class="title"><a href="/2022/03/26/%E5%8E%8B%E7%94%B5%E9%99%B6%E7%93%B7%E7%AE%A1%E4%BB%BF%E7%9C%9F/">压电陶瓷管仿真</a></p><p class="categories"><a href="/categories/Comsol/">Comsol</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-09T14:00:00.000Z">2022-03-09</time></p><p class="title"><a href="/2022/03/09/%E5%BE%AE%E9%98%BB%E6%A2%81%E6%A8%A1%E5%9E%8B%E4%BB%BF%E7%9C%9F/">微阻梁模型仿真</a></p><p class="categories"><a href="/categories/Comsol/">Comsol</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-03-06T08:34:42.000Z">2022-03-06</time></p><p class="title"><a href="/2022/03/06/test/">test</a></p><p class="categories"><a href="/categories/Hexo/">Hexo</a></p></div></article></div></div></div></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/"><img src="/img/logo.svg" alt="Lin&#039;s Blog" height="28"></a><p class="is-size-7"><span>&copy; 2022 Lin</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Download on GitHub" href="https://github.com/ppoffice/hexo-theme-icarus"><i class="fab fa-github"></i></a></p></div></div></div></div></footer><script src="https://cdnjs.loli.net/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/moment.js/2.22.2/moment-with-locales.min.js"></script><script src="https://cdnjs.loli.net/ajax/libs/clipboard.js/2.0.4/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdnjs.loli.net/ajax/libs/cookieconsent/3.1.1/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdnjs.loli.net/ajax/libs/lightgallery/1.10.0/js/lightgallery.min.js" defer></script><script src="https://cdnjs.loli.net/ajax/libs/justifiedGallery/3.8.1/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><script type="text/x-mathjax-config">MathJax.Hub.Config({
+            'HTML-CSS': {
+                matchFontHeight: false
+            },
+            SVG: {
+                matchFontHeight: false
+            },
+            CommonHTML: {
+                matchFontHeight: false
+            },
+            tex2jax: {
+                inlineMath: [
+                    ['$','$'],
+                    ['\\(','\\)']
+                ]
+            }
+        });</script><script src="https://cdnjs.loli.net/ajax/libs/mathjax/2.7.9/MathJax.js?config=TeX-MML-AM_CHTML" defer></script><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
