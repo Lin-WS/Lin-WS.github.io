@@ -30,7 +30,9 @@ channel1 = 1; % 通道
 figure;
 [S, f, t] = spectrogram(data(:, channel1), window, overlap, nfft, FS);
 axis xy;
-imagesc(t, f, 10 * log10(abs(S)));
+SdB = 20 * log10(abs(S)/(max(max(abs(S)))));
+SdB(SdB <= -80) = -79.99;
+imagesc(t, f, SdB);
 set(gca, 'YDir', 'normal');
 colormap('jet');
 colorbar;
